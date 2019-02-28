@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'model/post.dart';
+import 'demo/drawer_demo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
+import 'demo/listview_demo.dart';
 
 /* void main(){
   runApp(App());
@@ -16,58 +18,77 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Home(),
-      theme: ThemeData(primarySwatch: Colors.yellow // 主题的主要颜色
-          ),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow, // 主题的主要颜色
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5)), // 高亮颜色
+      //splashColor: Colors.white70,
     );
   }
 }
 
+/**
+ * 使用标签展示内容,需要三样东西
+ * 1. Tab
+ * 2. TabBar 标签栏
+ * 3. TabView 标签视图
+ * 4. TabControllor 标签的控制器，控制按的是那个标签，打开的是那个标签视图
+ */
 class Home extends StatelessWidget {
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0), //外边距
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl), //加载图片
-          SizedBox(height: 16.0), //空间高度
-          Text(posts[index].title, style: Theme.of(context).textTheme.title),
-          Text(posts[index].author, style: Theme.of(context).textTheme.subhead),
-          SizedBox(height: 16.0)
-        ],
-      ),
-    );
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
 
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        title: Text('coding type'), // 标题
-        elevation: 0.0, // 阴影 0.0  默认是 4.0
-      ),
-      body: ListView.builder(
-        itemCount: posts.length,
-        itemBuilder: _listItemBuilder,
-      ),
-    );
-  }
-}
-
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child: Text(
-        'hello',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-            fontSize: 40.0, fontWeight: FontWeight.bold, color: Colors.black87),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          // 标题左边,设置抽屉，默认会加上
+          /* leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation',
+            onPressed: () => debugPrint('Navigation is onPress.'),
+          ), */
+          title: Text('coding type'), // 标题
+          // 标题右边
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () => debugPrint('Search is onPress.'),
+            ),
+          ],
+          elevation: 0.0, // 阴影 0.0  默认是 4.0
+          // 标题底部添加TabBar
+          bottom: TabBar(
+            unselectedLabelColor: Colors.black38,
+            indicatorColor: Colors.black54,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 1.0,
+            tabs: <Widget>[
+              Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.change_history)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+        ),
+        // 标签的内容显示在TabBarView
+        body: TabBarView(
+          children: <Widget>[
+            ListViewDemo(),
+            //Icon(Icons.local_florist, size: 128.0, color: Colors.black12),
+            Icon(Icons.change_history, size: 128.0, color: Colors.black12),
+            Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
+          ],
+        ),
+        // 左边抽屉布局 右边的是endDrawer,里面一般用Drawer 部件
+        drawer: DrawerDemo(),
+        // 底部导航栏
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
