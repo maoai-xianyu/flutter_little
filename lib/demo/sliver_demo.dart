@@ -15,7 +15,7 @@ class SliverDemo extends StatelessWidget {
             expandedHeight: 178.0,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                'codingType flutter',
+                'codingType flutter'.toUpperCase(),
                 style: TextStyle(
                   fontSize: 15.0,
                   letterSpacing: 3.0,
