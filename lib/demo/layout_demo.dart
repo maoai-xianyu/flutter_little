@@ -13,9 +13,9 @@ class LayoutDemo extends StatelessWidget {
     // return CrossAxisDemo();
     // return SizeBoxDemo();
     // return AlignmentDemo();
-    // return StackDemo();
+     return StackDemo();
     // return AspectRatioDemo();
-    return ConstrainedBoxDemo();
+    //return ConstrainedBoxDemo();
   }
 }
 
@@ -29,10 +29,7 @@ class ConstrainedBoxDemo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: 200.0,
-              maxWidth: 200.0
-            ),
+            constraints: BoxConstraints(minHeight: 200.0, maxWidth: 200.0),
             child: Container(
               color: Color.fromRGBO(3, 54, 255, 1.0),
             ),
@@ -235,6 +232,7 @@ class SizeBoxDemo extends StatelessWidget {
     );
   }
 }
+
 
 // 交叉轴
 class CrossAxisDemo extends StatelessWidget {

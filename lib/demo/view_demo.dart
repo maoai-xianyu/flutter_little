@@ -10,7 +10,7 @@ class ViewDemo extends StatelessWidget {
 }
 
 /**
- * 网格视图 GridView.count 默认可以垂直滚动
+ * 网格视图 GridView.builder  按需生成网格
  */
 class GridViewBuilderDemo extends StatelessWidget {
   Widget _gridItemBuilder(BuildContext context, int index) {
@@ -40,7 +40,7 @@ class GridViewBuilderDemo extends StatelessWidget {
 }
 
 /**
- * 网格视图 GridView.count 默认可以垂直滚动
+ * 网格视图 GridView.extent 默认可以垂直滚动
  */
 class GridViewExtentDemo extends StatelessWidget {
   List<Widget> _buildTiles(int length) {
@@ -60,6 +60,7 @@ class GridViewExtentDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GridView.extent(
+      // 设置尺寸
       maxCrossAxisExtent: 150.0,
       crossAxisSpacing: 16.0,
       mainAxisSpacing: 16.0,
@@ -74,6 +75,8 @@ class GridViewExtentDemo extends StatelessWidget {
  * 网格视图 GridView.count 默认可以垂直滚动
  */
 class GridViewCountDemo extends StatelessWidget {
+
+  // 生成数据
   List<Widget> _buildTiles(int length) {
     return List.generate(length, (int index) {
       return Container(
@@ -109,6 +112,7 @@ class PageViewBuilderDemo extends StatelessWidget {
   Widget _pageItemBuilder(BuildContext content, int index) {
     return Stack(
       children: <Widget>[
+        // 占满空间 SizedBox.expand
         SizedBox.expand(
           child: Image.network(
             posts[index].imageUrl,
@@ -163,7 +167,7 @@ class PageViewDemo extends StatelessWidget {
       // scrollDirection: Axis.vertical,
       // 页面在可视口的中间显示后会触发回调
       onPageChanged: (currentPage) => debugPrint('Page: $currentPage'),
-
+      // 控制PageView小部件显示页面用的对象
       controller: PageController(
         initialPage: 1,
         // 是否记录用户滚动到那一个页面

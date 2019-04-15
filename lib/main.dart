@@ -4,9 +4,9 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
-import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
+
 /* void main(){
   runApp(App());
 } */
@@ -89,13 +89,9 @@ class Home extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             ListViewDemo(),
-            //Icon(Icons.local_florist, size: 128.0, color: Colors.black12),
             BasicDemo(),
-            //Icon(Icons.change_history, size: 128.0, color: Colors.black12),
             LayoutDemo(),
-            //Icon(Icons.directions_bike, size: 128.0, color: Colors.black12),
             SliverDemo(),
-            //Icon(Icons.view_quilt, size: 128.0, color: Colors.black12),
           ],
         ),
         // 左边抽屉布局 右边的是endDrawer,里面一般用Drawer 部件

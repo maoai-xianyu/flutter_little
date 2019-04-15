@@ -4,7 +4,9 @@ import '../model/post.dart';
 class SliverDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
+    //slivers 需要放在 CustomScrollView 下
+
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -109,6 +111,7 @@ class SliveGridDemo extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 8.0,
         crossAxisSpacing: 8.0,
+        // 比例
         childAspectRatio: 1.0,
       ),
       delegate: SliverChildBuilderDelegate(
