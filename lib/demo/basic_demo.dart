@@ -36,6 +36,7 @@ class ContainerDemo extends StatelessWidget {
               size: 32.0,
               color: Colors.white,
             ),
+            // color 会和 decoration color 冲突
             //color: Color.fromRGBO(3, 54, 255, 1.0),
             padding: EdgeInsets.all(16.0),
             margin: EdgeInsets.all(8.0),
@@ -67,7 +68,7 @@ class ContainerDemo extends StatelessWidget {
               /*  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(64.0),
                     bottomLeft: Radius.circular(64.0)), */
-              // 圆角和圆形不能同时存在
+            
               //borderRadius: BorderRadius.circular(16.0),
               // 阴影效果
               boxShadow: [
@@ -82,7 +83,7 @@ class ContainerDemo extends StatelessWidget {
                   spreadRadius: 0.1,
                 )
               ],
-              // 改变盒子的形状
+              // 改变盒子的形状  圆角和圆形不能同时存在
               shape: BoxShape.circle,
               // 渐变效果:镜像渐变
               /*  gradient: RadialGradient(colors: [
