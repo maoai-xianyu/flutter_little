@@ -16,13 +16,10 @@ class NavigatorDemo extends StatelessWidget {
               child: Text('About'),
               onPressed: () {
                 // 打开一个新的页面
-                /*  Navigator.of(context).push(
+                /* Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (BuildContext context) => Page(
-                            title: 'about',
-                          )),
+                      builder: (BuildContext context) => Page(title: 'about')),
                 ); */
-
                 Navigator.pushNamed(context, '/about');
               },
             )

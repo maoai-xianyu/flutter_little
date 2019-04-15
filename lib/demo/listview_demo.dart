@@ -34,16 +34,14 @@ class ListViewDemo extends StatelessWidget {
           Positioned.fill(
             child: Material(
               color: Colors.transparent,
-              // 渐变效果
+              // 溅墨动画效果
               child: InkWell(
                 splashColor: Colors.white.withOpacity(0.3),
                 highlightColor: Colors.white.withOpacity(0.1),
                 onTap: () {
                   debugPrint('渐变效果');
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PostShow(
-                            post: posts[index],
-                          )));
+                      builder: (context) => PostShow(post: posts[index])));
                 },
               ),
             ),

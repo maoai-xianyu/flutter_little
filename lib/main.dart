@@ -32,8 +32,8 @@ class App extends StatelessWidget {
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow, // 主题的主要颜色
+          splashColor: Colors.white70,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5)), // 高亮颜色
-      //splashColor: Colors.white70,
     );
   }
 }
