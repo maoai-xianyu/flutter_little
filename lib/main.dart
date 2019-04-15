@@ -5,6 +5,7 @@ import 'demo/listview_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart';
 
 /* void main(){
   runApp(App());
@@ -22,11 +23,17 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      //home: NavigatorDemo(),
+      // 初始路由 
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/about': (context) => Page(title: 'about'),
+      },
       theme: ThemeData(
           primarySwatch: Colors.yellow, // 主题的主要颜色
+          splashColor: Colors.white70,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5)), // 高亮颜色
-      //splashColor: Colors.white70,
     );
   }
 }
