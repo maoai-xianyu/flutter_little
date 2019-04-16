@@ -24,5 +24,5 @@ samples, guidance on mobile development, and a full API reference.
 5. 布局：Row Colum mainAxis主轴 crossAxis 交叉轴  SizeBox Aligment对齐 stack 一摞小部件 AspectRatio 宽高比 -> layout_dem0.dart
 6. 视图：PageView 页面视图 GridView 网格视图 -> view_demo.dart
 7. Sliver: SliverGrid 网格视图   SliverList 列表视图 -> sliver_demo.dart
-8. 路由: Navigator.of() Navigator.push()  Navigator.pop() -> navigator_demo.dart
-9. 表单: 主题  TextField -> form_demo.dart
+8. 路由: 初始化路由 Navigator.of() Navigator.push()  Navigator.pop() -> navigator_demo.dart  main.dart(initialRoute)
+9. 表单: 主题theme  TextField小部件 InputDecoration TextEditingController控制器 Form  TextFormField(onSave() validator)  GlobalKey -> form_demo.dart
