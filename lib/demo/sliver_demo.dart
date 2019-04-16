@@ -4,7 +4,6 @@ import '../model/post.dart';
 class SliverDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     //slivers 需要放在 CustomScrollView 下
 
     return Scaffold(
@@ -63,9 +62,16 @@ class SliveListDemo extends StatelessWidget {
                 children: <Widget>[
                   AspectRatio(
                     aspectRatio: 16 / 9,
-                    child: Image.network(
-                      posts[index].imageUrl,
-                      fit: BoxFit.cover,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 8.0),
+                      alignment: Alignment(1.0, 1.0),
+                      child: Text('${posts[index].author}'),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(12.0),
+                          image: DecorationImage(
+                              image: NetworkImage(posts[index].imageUrl),
+                              fit: BoxFit.cover)),
                     ),
                   ),
                   Positioned(
