@@ -65,7 +65,30 @@ class ButtonDemo extends StatelessWidget {
                   onPressed: () {},
                   splashColor: Colors.grey, // 渐墨效果
                   elevation: 0.0,
-                  textColor: Theme.of(context).accentColor,
+                  color: Theme.of(context).accentColor, //按钮的填充颜色
+                  //textColor: Colors.white, // 文字颜色
+                  textTheme: ButtonTextTheme.primary, // 文字颜色
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonColor: Theme.of(context).accentColor,
+                    buttonTheme: ButtonThemeData(
+                      textTheme: ButtonTextTheme.primary,
+                      /* shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ), */
+                      shape: StadiumBorder(),
+                    )
+                  ),
+                  child: RaisedButton(
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey, // 渐墨效果
+                    elevation: 0.0,
+                  ),
                 ),
                 SizedBox(
                   width: 20.0,
