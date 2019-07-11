@@ -26,9 +26,32 @@ class _RadioDemoState extends State<RadioDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('RadioGroupValueA  $groupValueA'),
+            SizedBox(height: 15.0),
+            // 带标签与图片的单选按钮
+            RadioListTile(
+              value: 0,
+              groupValue: groupValueA,
+              onChanged: _handleRadioValueChanged,
+              title: Text('Options A'),
+              subtitle: Text('Description'),
+              secondary: Icon(Icons.filter_1),
+              selected: groupValueA == 0,
+            ),
+            RadioListTile(
+              value: 1,
+              groupValue: groupValueA,
+              onChanged: _handleRadioValueChanged,
+              title: Text('Options B'),
+              subtitle: Text('Description'),
+              secondary: Icon(Icons.filter_2),
+              selected: groupValueA == 1,
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // 单选按钮
                 Radio(
                   value: 0,
                   groupValue: groupValueA,
