@@ -20,6 +20,20 @@ class _SwitchDemoState extends State<SwitchDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // 带标签和图片的开关
+            SwitchListTile(
+              value: _switchItemA,
+              onChanged: (value) {
+                setState(() {
+                  _switchItemA = value;
+                });
+              },
+              title: Text('Options'),
+              subtitle: Text('Description'),
+              secondary:
+                  Icon(_switchItemA ? Icons.visibility : Icons.visibility_off),
+              selected: _switchItemA,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
