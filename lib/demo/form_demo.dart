@@ -4,6 +4,10 @@ class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('formDemo'),
+        elevation: 0.0,
+      ),
       body: Theme(
         // ThemeData 会代替应用的所有主题
         /*  data: ThemeData(
