@@ -23,6 +23,7 @@ class _SliderDemoState extends State<SliderDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // 滑动选择器
                 Slider(
                   value: _slideItemA,
                   onChanged: (value) {
@@ -36,6 +37,7 @@ class _SliderDemoState extends State<SliderDemo> {
                   max: 10.0,
                   // 分割
                   divisions: 10,
+                  // 显示标签
                   label: '${_slideItemA.toInt()}',
                 )
               ],
