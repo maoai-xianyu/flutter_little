@@ -19,6 +19,7 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // 带标签与图片的复选框
             CheckboxListTile(
               value: _checkboxItemA,
               onChanged: (value) {
