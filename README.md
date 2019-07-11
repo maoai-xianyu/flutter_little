@@ -27,4 +27,5 @@ samples, guidance on mobile development, and a full API reference.
 8. 路由: 初始化路由 Navigator.of() Navigator.push()  Navigator.pop() -> navigator_demo.dart  main.dart(initialRoute)
 9. 表单: 主题theme  TextField小部件 InputDecoration TextEditingController控制器 Form  TextFormField(onSave() validator)  GlobalKey -> form_demo.dart
 10. 按钮: FlatButton 文字按钮 RaisedButton 按钮有颜色和阴影  OutlineButton 描边按钮 PopupMenuButton 弹出框按钮 -> material_components.dart
-11. 输入: CheckBox 复选框 CheckboxListTile 有文本的复选框
+11. 输入: CheckBox 复选框 CheckboxListTile 有文本的复选框， Switch 开关 Slider 滑动选择器 intl 时间格式  showDatePicker 日期选择器   showTimePicker 时间选择器  Radio 单选框  RadioListTile 有文本的单选框
+12. SimpleDialog 
