@@ -29,3 +29,4 @@ samples, guidance on mobile development, and a full API reference.
 10. 按钮: FlatButton 文字按钮 RaisedButton 按钮有颜色和阴影  OutlineButton 描边按钮 PopupMenuButton 弹出框按钮 -> material_components.dart
 11. 输入: CheckBox 复选框 CheckboxListTile 有文本的复选框， Switch 开关 Slider 滑动选择器 intl 时间格式  showDatePicker 日期选择器   showTimePicker 时间选择器  Radio 单选框  RadioListTile 有文本的单选框
 12. SimpleDialog 简单对话框  AlertDialog 对话框 BottomSheet 底部滑动窗口 SnackBar 操作提示栏 ExpansionPanelList 收缩面版
+13. MOC Chip 小碎片 ActionChip 动作碎片  FilterChip 过滤碎片  ChoiceChip 选择碎片
